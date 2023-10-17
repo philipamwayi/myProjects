@@ -1,0 +1,50 @@
+[root@localhost home]# ls
+israel  Personal_Record_System  philip
+[root@localhost home]# mkdir Movie-Record-System
+[root@localhost home]# cd Movie-Record-System/
+[root@localhost Movie-Record-System]# mkdir movies series
+[root@localhost Movie-Record-System]# cd movies/
+[root@localhost movies]# mkdir moviex moviey
+[root@localhost movies]# cd moviex/
+[root@localhost moviex]# touch movie_x1.txt movie_x2.txt movie_x3.txt movie_x4.txt
+[root@localhost moviex]# cd ..
+[root@localhost movies]# cd moviey/
+[root@localhost moviey]# touch movie_y1.txt movie_y2.txt movie_y3.txt movie_y4.txt
+[root@localhost moviey]# cd ..
+[root@localhost movies]# cd ..
+[root@localhost Movie-Record-System]# cd series/
+[root@localhost series]# mkdir seriesa seriesb
+[root@localhost series]# cd seriesa
+[root@localhost seriesa]# touch series_a1.txt series_a2.txt series_a3.txt
+[root@localhost seriesa]# cd ..
+[root@localhost series]# cd seriesb/
+[root@localhost seriesb]# touch series_b1.txt series_b2.txt series_b3.txt
+[root@localhost seriesb]# cd ..
+[root@localhost series]# cd ..
+[root@localhost Movie-Record-System]# cd ..
+[root@localhost home]# tree Movie-Record-System/
+Movie-Record-System/
+├── movies
+│   ├── moviex
+│   │   ├── movie_x1.txt
+│   │   ├── movie_x2.txt
+│   │   ├── movie_x3.txt
+│   │   └── movie_x4.txt
+│   └── moviey
+│       ├── movie_y1.txt
+│       ├── movie_y2.txt
+│       ├── movie_y3.txt
+│       └── movie_y4.txt
+└── series
+    ├── seriesa
+    │   ├── series_a1.txt
+    │   ├── series_a2.txt
+    │   └── series_a3.txt
+    └── seriesb
+        ├── series_b1.txt
+        ├── series_b2.txt
+        └── series_b3.txt
+
+6 directories, 14 files
+[root@localhost home]# 
+
