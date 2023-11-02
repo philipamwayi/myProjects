@@ -1,0 +1,126 @@
+[root@localhost credentials]# useradd israel
+[root@localhost credentials]# passwd israel
+Changing password for user israel.
+New password: 
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[root@localhost credentials]# su israel
+[israel@localhost credentials]$ 
+[israel@localhost credentials]$ 
+[israel@localhost credentials]$ pwd
+/home/Personal_Record_System/credentials
+[israel@localhost credentials]$ cd ..
+[israel@localhost Personal_Record_System]$ cd ..
+[israel@localhost home]$ pwd
+/home
+[israel@localhost home]$ cd israel
+[israel@localhost ~]$ pwd
+/home/israel
+[israel@localhost ~]$ mkdir Personal_Record_System\
+> ^C
+[israel@localhost ~]$ ls
+[israel@localhost ~]$ mkdir Personal_Record_System
+[israel@localhost ~]$ ls
+Personal_Record_System
+[israel@localhost ~]$ cd Personal_Record_System/
+[israel@localhost Personal_Record_System]$ mkdir credentials notes backups
+[israel@localhost Personal_Record_System]$ ls
+backups  credentials  notes
+[israel@localhost Personal_Record_System]$ cd credentials/
+[israel@localhost credentials]$ ls
+[israel@localhost credentials]$ touch usernames.txt passwords.txt email_addresses.txt
+[israel@localhost credentials]$ ls
+email_addresses.txt  passwords.txt  usernames.txt
+[israel@localhost credentials]$ ls -l
+total 0
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:38 email_addresses.txt
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:38 passwords.txt
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:38 usernames.txt
+[israel@localhost credentials]$ chmod a=rw email_addresses.txt 
+[israel@localhost credentials]$ chmod g-w passwords.txt 
+[israel@localhost credentials]$ chmod g-w usernames.txt 
+[israel@localhost credentials]$ ls -l
+total 0
+-rw-rw-rw-. 1 israel israel 0 Oct 17 12:38 email_addresses.txt
+-rw-r--r--. 1 israel israel 0 Oct 17 12:38 passwords.txt
+-rw-r--r--. 1 israel israel 0 Oct 17 12:38 usernames.txt
+[israel@localhost credentials]$ cd ..
+[israel@localhost Personal_Record_System]$ cd notes/
+[israel@localhost notes]$ touch personal_notes.txt important_dates.txt
+[israel@localhost notes]$ ls
+important_dates.txt  personal_notes.txt
+[israel@localhost notes]$ ls -l
+total 0
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:44 important_dates.txt
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:44 personal_notes.txt
+[israel@localhost notes]$ chmod u=rw important_dates.txt 
+[israel@localhost notes]$ chmod u=rw personal_notes.txt 
+[israel@localhost notes]$ ls -l
+total 0
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:44 important_dates.txt
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:44 personal_notes.txt
+[israel@localhost notes]$ chmod o-r important_dates.txt 
+[israel@localhost notes]$ chmod o-r personal_notes.txt 
+[israel@localhost notes]$ chmod g-rw important_dates.txt 
+[israel@localhost notes]$ chmod g-rw personal_notes.txt 
+[israel@localhost notes]$ ls -l
+total 0
+-rw-------. 1 israel israel 0 Oct 17 12:44 important_dates.txt
+-rw-------. 1 israel israel 0 Oct 17 12:44 personal_notes.txt
+[israel@localhost notes]$ cd ..
+[israel@localhost Personal_Record_System]$ cd backups/
+[israel@localhost backups]$ touch backup_2023_06_13.zip backup_2023_06_20.zip
+[israel@localhost backups]$ ls -l
+total 0
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:49 backup_2023_06_13.zip
+-rw-rw-r--. 1 israel israel 0 Oct 17 12:49 backup_2023_06_20.zip
+[israel@localhost backups]$ chmod a-rw backup_2023_06_13.zip 
+[israel@localhost backups]$ chmod a-rw backup_2023_06_20.zip 
+[israel@localhost backups]$ ls -l
+total 0
+----------. 1 israel israel 0 Oct 17 12:49 backup_2023_06_13.zip
+----------. 1 israel israel 0 Oct 17 12:49 backup_2023_06_20.zip
+[israel@localhost backups]$ chmod u+rw backup_2023_06_13.zip 
+[israel@localhost backups]$ chmod u+rw backup_2023_06_20.zip 
+[israel@localhost backups]$ ls -l
+total 0
+-rw-------. 1 israel israel 0 Oct 17 12:49 backup_2023_06_13.zip
+-rw-------. 1 israel israel 0 Oct 17 12:49 backup_2023_06_20.zip
+[israel@localhost backups]$ cd ..
+[israel@localhost Personal_Record_System]$ cd credentials/
+[israel@localhost credentials]$ ls -l
+total 0
+-rw-rw-rw-. 1 israel israel 0 Oct 17 12:38 email_addresses.txt
+-rw-r--r--. 1 israel israel 0 Oct 17 12:38 passwords.txt
+-rw-r--r--. 1 israel israel 0 Oct 17 12:38 usernames.txt
+[israel@localhost credentials]$ chmod a-rw usernames.txt 
+[israel@localhost credentials]$ chmod a-rw passwords.txt 
+[israel@localhost credentials]$ chmod a-rw email_addresses.txt 
+[israel@localhost credentials]$ chmod u+rw usernames.txt 
+[israel@localhost credentials]$ chmod u+rw passwords.txt 
+[israel@localhost credentials]$ chmod u+rw email_addresses.txt 
+[israel@localhost credentials]$ ls -l
+total 0
+-rw-------. 1 israel israel 0 Oct 17 12:38 email_addresses.txt
+-rw-------. 1 israel israel 0 Oct 17 12:38 passwords.txt
+-rw-------. 1 israel israel 0 Oct 17 12:38 usernames.txt
+[israel@localhost credentials]$ cd ..
+[israel@localhost Personal_Record_System]$ cd ..
+[israel@localhost ~]$ tree Personal_Record_System/
+bash: tree: command not found...
+[israel@localhost ~]$ tree Personal_Record_System/
+Personal_Record_System/
+├── backups
+│   ├── backup_2023_06_13.zip
+│   └── backup_2023_06_20.zip
+├── credentials
+│   ├── email_addresses.txt
+│   ├── passwords.txt
+│   └── usernames.txt
+└── notes
+    ├── important_dates.txt
+    └── personal_notes.txt
+
+3 directories, 7 files
+[israel@localhost ~]$ 
+
